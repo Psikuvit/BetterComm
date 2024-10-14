@@ -25,7 +25,7 @@ startChatButton.addEventListener('click', () => {
 
 // Initialize WebSocket connection
 function initializeWebSocket() {
-    ws = new WebSocket('ws://192.168.8.146:3000');
+    ws = new WebSocket('ws://localhost:3000');
     
     ws.onopen = () => {
         console.log('Connected to the server');
