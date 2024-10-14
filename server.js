@@ -1,13 +1,9 @@
 const WebSocket = require('ws');
 const http = require('http');
 const express = require('express');
-const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
-
-// Use cors to allow cross-origin requests
-app.use(cors());
 
 // Serve the HTML, CSS, and JS files
 app.use(express.static('public'));
