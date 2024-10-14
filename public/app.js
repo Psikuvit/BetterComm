@@ -1,5 +1,3 @@
-// app.js
-
 let ws;
 let userName = '';
 
@@ -25,7 +23,8 @@ startChatButton.addEventListener('click', () => {
 
 // Initialize WebSocket connection
 function initializeWebSocket() {
-    ws = new WebSocket('ws://localhost:3000');
+    // Replace with your actual Render app URL
+    ws = new WebSocket('wss://bettercomm.onrender.com');
     
     ws.onopen = () => {
         console.log('Connected to the server');
@@ -38,6 +37,10 @@ function initializeWebSocket() {
     
     ws.onclose = () => {
         console.log('Disconnected from the server');
+    };
+    
+    ws.onerror = (error) => {
+        console.error('WebSocket error:', error);
     };
 }
 
