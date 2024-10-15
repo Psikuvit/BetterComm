@@ -31,8 +31,18 @@ function initializeWebSocket() {
     };
     
     ws.onmessage = (event) => {
-        const message = JSON.parse(event.data);
-        displayMessage(message.name, message.text);
+        const data = JSON.parse(event.data);
+        
+        // Handle chat history or new message
+        if (data.type === 'history') {
+            // Display all previous messages
+            data.messages.forEach((message) => {
+                displayMessage(message.name, message.text);
+            });
+        } else if (data.type === 'message') {
+            // Display a new message
+            displayMessage(data.message.name, data.message.text);
+        }
     };
     
     ws.onclose = () => {
@@ -56,6 +66,13 @@ sendMessageButton.addEventListener('click', () => {
         ws.send(JSON.stringify(message));
         displayMessage('You', messageText);
         messageInput.value = '';
+    }
+});
+
+messageInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // Prevent the default behavior of form submission or new line creation
+        sendMessage();
     }
 });
 

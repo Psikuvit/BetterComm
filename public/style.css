@@ -58,3 +58,50 @@ body {
 #sendMessage:hover {
     background-color: #0056b3
 }
+
+/* General styling for the chat container */
+.chat-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#userList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#userList div {
+    padding: 8px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Chat content styling */
+.chat-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20
+}
