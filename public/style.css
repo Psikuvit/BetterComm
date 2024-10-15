@@ -59,7 +59,6 @@ body {
     background-color: #0056b3
 }
 
-/* General styling for the chat container */
 .chat-container {
     display: flex;
     width: 100%;
@@ -97,11 +96,19 @@ body {
     border-radius: 5px;
 }
 
-/* Chat content styling */
 .chat-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 20
+    padding: 20px;
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
 }
